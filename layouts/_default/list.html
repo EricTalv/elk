@@ -3,19 +3,30 @@
 <div class="row p-5 justify-content-center">
 	<div class="col-sm-3 border nopadding">
 		<h1 id="my-h2">{{ $.Page.Title }}</h1>
-		<div class="item-list-wrapper">
-			<ul>
+		<nav>
+			<div class="item-list-wrapper">
 				
+				<ul>
+					
+					{{ $currentPage := . }}
 
-				{{ range $.Page.Pages }}
-				<li class="custom-list-item">
-					<a href="#">
-				     {{ .Param "title" }}
-					</a>
-				</li>
-				{{ end }}
-			</ul>
-		</div>
+					{{ range $.Page.Pages }}
+					{{ $active := "" }}
+					
+
+
+
+					<li class="custom-list-item {{ $active }}">
+						<a href="#">
+							{{ .Param "title" }}
+						</a>
+					</li>
+
+					{{ end }}
+				</ul>
+
+			</div>
+		</nav>
 	</div>
 
 	<div class=" c-custom">
@@ -55,6 +66,10 @@
 </div>
 
 <style type="text/css">
+	
+	.item-active {
+		font-weight: bold;
+	}
 
 	.item-list-wrapper ul {
 		margin: 0;
