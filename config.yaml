@@ -1,0 +1,31 @@
+baseURL: /
+languageCode: en-us
+title: Elkesensor
+
+# See https://feathericons.com/
+# The value of pre is the icon name
+menu:
+  nav:
+  - name: Ettevõttest
+    pre: 
+    url: /
+    weight: 1
+  - name: Partnerid
+    pre: 
+    url: /partnerid/
+    weight: 2
+  - name: Tooted
+    pre: 
+    url: /tooted/
+    weight: 3
+  - name: Kontakt
+    pre: 
+    url: /kontakt/
+    weight: 4
+
+
+params:
+  showActiveNav: true 
+  footerText: Copyright © 2017 Elke Sensor OÜ. Kõik õigused kaitstud. by HansaNet
+
+
