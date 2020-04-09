@@ -8,17 +8,15 @@
 				
 				<ul>
 					
-					{{ $currentPage := . }}
+	
 
 					{{ range $.Page.Pages }}
-					{{ $active := "" }}
-					
 
 
 
-					<li class="custom-list-item {{ $active }}">
-						<a href="#">
-							{{ .Param "title" }}
+					<li class="custom-list-item ">
+						<a href="{{ .URL }}">
+							{{ .Title }}
 						</a>
 					</li>
 
@@ -58,10 +56,10 @@
 
 				{{ else }}
 				<h1>{{ .Site.Title }} THERE IS NO CONTENT IN _INDEX</h1>
-				<!-- <p class="font-125">{{ .Site.Params.homeText | markdownify }}</p> -->
 				{{ end }}
 			</div>
 		</div>
+
 	</div>
 </div>
 
