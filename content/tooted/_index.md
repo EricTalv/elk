@@ -1,5 +1,6 @@
+
 ---
 title: "Tooted"
+type: "shop"
 ---
 
-## Siit leiate kõik meie Tooted!
