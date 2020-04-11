@@ -4,6 +4,7 @@ title: Elkesensor
 
 # See https://feathericons.com/
 # The value of pre is the icon name
+
 menu:
   nav:
   - name: Ettevõttest
@@ -27,5 +28,22 @@ menu:
 params:
   showActiveNav: true 
   footerText: Copyright © 2017 Elke Sensor OÜ. Kõik õigused kaitstud. by HansaNet
+  contact:
+    title: Kontakt
+    form:
+      name:
+        text: Nimi
+        error: Palun sisestage oma nimi
+      email:
+        text: Email Aadress
+        error: Palun sisestage oma meili aadress
+      message:
+        text: Sõnum
+        error: Palun sisestage oma sõnum
+      button:
+        text: Saada
+  email: yourformspree@emailhereplease.com
+
+          
 
 

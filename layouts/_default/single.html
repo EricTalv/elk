@@ -3,38 +3,25 @@
 <div class="row p-5 justify-content-center">
 	<div class="col-sm-3 border nopadding">
 		<h1 id="my-h2">{{ .Title }}</h1>
-
 		<nav>
 			<div class="item-list-wrapper">
 				{{ $currentPage := printf "%s" . }}
 				{{ $bannedPage := "Page(/kontakt.md)" }}
-				<ul>
-					
-					{{ if eq $currentPage $bannedPage}}
-					
+				<ul>	
+					{{ if eq $currentPage $bannedPage}}		
 					{{ else }}
 					{{ range (where .Site.RegularPages "Section" "partnerid") }}
-
-					
 					<li class="custom-list-item">
 						<a href="{{ .Permalink }}">
 							{{ .Title }}
 							
 						</a>
 					</li>
-
 					{{ end }}
 					{{ end }}
-
-
-
 				</ul>
-
 			</div>
 		</nav>
-
-
-
 	</div>
 	<div class=" c-custom">
 		<div class="banner">
@@ -61,7 +48,19 @@
 				{{  .Content }}
 			</div>
 		</div>
+
+		<div class="mx-5">
+			
+			{{ if eq $currentPage $bannedPage}}		
+
+			{{ partial "contact.html" . }}
+
+			{{ end }}
+
+		</div>
 	</div>
+
+	
 </div>
 
 <style type="text/css">
