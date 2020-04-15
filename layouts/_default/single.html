@@ -7,8 +7,9 @@
 			<div class="item-list-wrapper">
 				{{ $currentPage := printf "%s" . }}
 				{{ $bannedPage := "Page(/kontakt.md)" }}
+				{{ $bannedPage2 := "Page(/en/kontakt.md)" }}
 				<ul>	
-					{{ if eq $currentPage $bannedPage}}		
+					{{ if or (and $currentPage $bannedPage) (and $currentPage $bannedPage2)  }}		
 					{{ else }}
 					{{ range (where .Site.RegularPages "Section" "partnerid") }}
 					<li class="custom-list-item">

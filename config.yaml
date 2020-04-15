@@ -1,28 +1,80 @@
 baseURL: /
 languageCode: en-us
 title: Elkesensor
+DefaultContentLanguage: ee
 
 # See https://feathericons.com/
 # The value of pre is the icon name
 
 menu:
-  nav:
-  - name: Ettevõttest
-    pre: 
-    url: /
+  main:
+    - name: Ettevõttest
+      identifier: ettevõttest
+      url: /
+      weight: 1
+    - name: Partnerid
+      identifier: partnerid
+      url: /partnerid/
+      weight: 2
+    - name: Tooted
+      identifier: tooted
+      url: /tooted/
+      weight: 3
+    - name: Kontakt
+      identifier: contact
+      url: /kontakt/
+      weight: 4
+
+Languages:
+  ee:
+    LanguageCode: ee
+    LanguageName: Estonia
     weight: 1
-  - name: Partnerid
-    pre: 
-    url: /partnerid/
+  en:
+    LanguageCode: en
+    LanguageName: English
     weight: 2
-  - name: Tooted
-    pre: 
-    url: /tooted/
-    weight: 3
-  - name: Kontakt
-    pre: 
-    url: /kontakt/
-    weight: 4
+    
+    menu:
+      main:
+        - name: About
+          identifier: ettevõttest
+          url: /
+          weight: 1
+        - name: Partners
+          identifier: partnerid
+          url: /partnerid/
+          weight: 3
+        - name: Products
+          identifier: tooted
+          url: /tooted/
+          weight: 5
+        - name: Contact
+          identifier: kontakt
+          url: /kontakt/
+          weight: 6
+
+
+
+
+# menu:
+#   nav:
+#   - name: Ettevõttest
+#     pre: 
+#     url: /
+#     weight: 1
+#   - name: Partnerid
+#     pre: 
+#     url: /partnerid/
+#     weight: 2
+#   - name: Tooted
+#     pre: 
+#     url: /tooted/
+#     weight: 3
+#   - name: Kontakt
+#     pre: 
+#     url: /kontakt/
+#     weight: 4
 
 
 params:

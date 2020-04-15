@@ -1,39 +1,47 @@
-<nav class="navbar navbar-expand-md shadow bg-white rounded">
-  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2 mx-5">
-    <ul class="navbar-nav mr-auto nav-font">
-     {{ $showActiveNav := .Site.Params.showActiveNav }}
-     {{ $currentPage := . }}
-     {{ range .Site.Menus.nav }}
+  <nav class="navbar navbar-expand-md shadow bg-white rounded">
+
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2 mx-5">
+
+      <ul class="navbar-nav mr-auto nav-font">
+
+       {{ $currentPage := . }}
+
+       {{ range .Site.Menus.main }}
        {{ $active := "" }}
-       {{ if eq $showActiveNav true }}
 
-         {{ $isMenu := or ($currentPage.IsMenuCurrent "nav" .) ($currentPage.HasMenuCurrent "nav" .) }}
-         {{ $isMenu = or $isMenu (eq $currentPage.Params.identifier .Identifier) }}
-         {{ $isMenu = or $isMenu (eq $currentPage.Title .Name) }}
+       {{ if eq $currentPage.Title .Name }}
+               
+       {{ $active = "nav-link-active" }}
 
-        {{ if $isMenu }} 
-         {{ $active = "nav-link-active" }}
-        {{ end }}  
-       {{ end }}  
-       {{ $icon := printf "<i data-feather=\"%s\"></i>" .Pre }}
-       {{ $text := print $icon " " .Name | safeHTML }}
-       <li class="nav-item ">
-         <a id="c-a" class="nav-link {{ $active }} " href="{{ .URL }}">{{ $text }}</a>
-       </li>
-     {{ end }}
-   </ul>
- </div>
- <div class="mx-auto order-0 ">
-  <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-    <span class="navbar-toggler-icon nopadding"></span>
-  </button>
-</div>
+       {{ else }}
 
-<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-  <ul class="navbar-nav ml-auto">
-    <li class="navbar-brand" href="#">
-      <img src="/logo.gif" style="width: 166px; height: 59px;">
-    </li>
-  </ul>
-</div>
+       {{ end }}
+
+       <li  class="nav-item ">
+
+        <a href="{{ .URL | relLangURL }}" id="c-a" class="nav-link {{ $active }}">{{ .Name }}</a>
+        
+      </li>
+
+      
+      {{ end }}
+
+    </ul>
+
+    {{ range .Site.Languages }}
+    {{ if not (eq .Lang $.Site.Language.Lang) }}
+    <a href="{{ relURL .Lang }}" lang="{{ .Lang }}" id="c-a" class="nav-link" style="font-size: 1.2rem">{{ .LanguageName }} ({{ .Lang }})</a>
+    {{ end }}
+    {{ end }}
+
+
+  </div>
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+    <ul class="navbar-nav ml-auto">
+      <li class="navbar-brand" href="#">
+        <img src="/logo.gif" style="width: 166px; height: 59px;">
+      </li>
+    </ul>
+  </div>
 </nav>
+

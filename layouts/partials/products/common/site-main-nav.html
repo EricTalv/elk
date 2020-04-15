@@ -1,7 +1,18 @@
 <nav class="navbar navbar-expand navbar-light justify-content-center">
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="{{ "tooted/" | absURL }}">Kõik</a>
+            
+        {{ $currentLang :=  printf "%s" .Site.Language.Lang }}
+
+        {{ if eq $currentLang "en"}}
+
+        <a class="nav-link" href="{{ "en/tooted/" | absURL }}">Kõik</a>
+
+        {{ else }}
+        <a class="nav-link" href="{{ "tooted/" | absURL }}">Kõik</a>
+        
+        {{ end }}
+
         </li>
         {{ range ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
         <li class="nav-item">
